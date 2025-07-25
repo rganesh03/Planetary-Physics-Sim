@@ -3,9 +3,11 @@
 
 typedef struct 
 {
-    float x, y;
-    float vx, vy;
-    float mass;
+    int id;
+    double x, y;
+    double vx, vy;
+    double mass;
 } Planet;
+
 
 #endif
