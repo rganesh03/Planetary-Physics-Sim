@@ -39,11 +39,27 @@ void render_simulation(const Simulation* sim) {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // white planets
 
     for (int i = 0; i < sim->planet_count; i++) {
-        const Planet* p = &sim->planets[i];
+        Planet* p = &sim->planets[i];
 
         // Convert simulation coordinates to screen space
         int screen_x = (int)(p->x + WINDOW_WIDTH / 2);
         int screen_y = (int)(p->y + WINDOW_HEIGHT / 2);
+
+        p->trail[p->trail_index] = (SDL_Point){ screen_x, screen_y };
+        p->trail_index = (p->trail_index + 1) % TRAIL_LENGTH;
+
+        if(p->trail_count < TRAIL_LENGTH) {
+            p->trail_count++;
+        }
+
+        SDL_Point ordered_trail[TRAIL_LENGTH];
+        for (int j = 0; j < p->trail_count; j++) {
+            int idx = (p->trail_index + j) % TRAIL_LENGTH;
+            ordered_trail[j] = p->trail[idx];
+        }
+
+        SDL_SetRenderDrawColor(renderer, 180, 180, 180, 255); // light gray
+        SDL_RenderDrawLines(renderer, ordered_trail, p->trail_count);
 
         SDL_Rect planet_rect = {
             screen_x - PLANET_RADIUS,

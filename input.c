@@ -18,9 +18,9 @@ Simulation create_simulation_from_input() {
         count = 3;
         planets = malloc(sizeof(Planet) * count);
 
-        planets[0] = (Planet){ .id = 0, .mass = 10000, .x = 0,   .y = 0,   .vx = 0,   .vy = 0 };
-        planets[1] = (Planet){ .id = 1, .mass = 0.3,   .x = 100, .y = 0,   .vx = 0,   .vy = 2 };
-        planets[2] = (Planet){ .id = 2, .mass = 0.0004,    .x = 105, .y = 0,   .vx = 0,   .vy = 2.5 };
+        planets[0] = (Planet){ .id = 0, .mass = 10000, .x = 0, .y = 0, .vx = 0, .vy = 0, .trail_count = 0, .trail_index = 0};
+        planets[1] = (Planet){ .id = 1, .mass = 0.3, .x = 100, .y = 0, .vx = 0, .vy = 2, .trail_count = 0, .trail_index = 0 };
+        planets[2] = (Planet){ .id = 2, .mass = 0.0004, .x = 105, .y = 0, .vx = 0, .vy = 2.5, .trail_count = 0, .trail_index = 0 };
 
     } else {
         printf("Enter number of planets: ");
@@ -29,7 +29,7 @@ Simulation create_simulation_from_input() {
         planets = malloc(sizeof(Planet)*count);
 
         for(int i = 0; i < count; i++) {
-                    printf("Planet %d:\n", i);
+            printf("Planet %d:\n", i);
             planets[i].id = i;
 
             printf("  Mass: ");
@@ -44,6 +44,9 @@ Simulation create_simulation_from_input() {
             scanf("%lf", &planets[i].vx);
             printf("  Velocity Y: ");
             scanf("%lf", &planets[i].vy);
+
+            planets[i].trail_count = 0;
+            planets[i].trail_index = 0;
         }
     }
 

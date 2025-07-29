@@ -37,6 +37,7 @@ void update_planet(Planet *p, float fx, float fy, float dt) {
 }
 
 void update_planets(Simulation *sim) {
+
     int n = sim->planet_count;
     float dt = 0.1f;
 
