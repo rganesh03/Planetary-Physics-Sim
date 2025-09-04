@@ -50,7 +50,7 @@ planets[2] = { mass = 0.0004,x = 105, y = 0, vx = 0, vy = 2.5 };  // Moon-like
 
 ---
 
-### 🧠 Architecture Overview
+### Architecture Overview
 
 | Module       | Responsibility                          |
 |--------------|------------------------------------------|
@@ -70,7 +70,7 @@ planets[2] = { mass = 0.0004,x = 105, y = 0, vx = 0, vy = 2.5 };  // Moon-like
 
 ---
 
-### 👨‍💻 Author
+### Author
 
 **Rishi** — Computer Science @ VCU 2026  
 Passionate aboutaerospace, machine learning, and embedded systems.  
