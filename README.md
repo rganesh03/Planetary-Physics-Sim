@@ -1,7 +1,3 @@
-Absolutely, Rishi — here’s a polished, recruiter-friendly `README.md` tailored to your orbital simulation project. It highlights your technical rigor, creative polish, and thoughtful architecture.
-
----
-
 ## Orbital Simulation — Real-Time Gravity Visualizer
 
 A lightweight, real-time simulation of gravitational interactions between celestial bodies using Newtonian physics and SDL2 for rendering. Designed for experimentation, visualization, and educational insight into orbital mechanics.
